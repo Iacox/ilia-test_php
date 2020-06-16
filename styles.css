@@ -1,0 +1,139 @@
+.overflow_hidden {
+    overflow: hidden;
+}
+
+.all_news {
+    position: absolute;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.article {
+    width: 500px;
+    margin: 0 auto;
+    margin-left: 350px;
+    padding: 16px;
+    background: #EEE;
+}
+
+.article-image {
+    transition: 0.4s;
+    transform: rotateX(90deg);
+    max-height: 0;
+    width: 100%;
+}
+
+.article-image.show {
+    transform: rotateX(0);
+    max-height: none;
+}
+
+.article-text {
+    text-align: justify;
+}
+
+.article-text p:first-letter {
+    padding-left: 30px;
+}
+
+.read_more,
+.read_less {
+    font-style: italic;
+    cursor: pointer;
+    color: grey;
+}
+
+.read_more:hover,
+.read_less:hover {
+    text-decoration: underline;
+}
+
+.preloader {
+    position: absolute;
+    z-index: 100;
+    background: #fff;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.preloader-item {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+}
+
+p.preloader-item__text {
+    text-align: center;
+    font-style: italic;
+}
+
+.preloader-item__img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: 2s linear 0s infinite preloader;
+}
+
+.preloader-item__img::after,
+.preloader-item__img::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 55px;
+    height: 10px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    top: 50%;left: 50%;
+}
+
+.preloader-item__img::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.download_file {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    padding: 15px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration: none;
+    font-style: italic;
+    color: #000;
+    transition: 0.2s;
+}
+
+.download_file:hover {
+    background: #000;
+    color: #fff;
+}
+
+@keyframes preloader { 
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
